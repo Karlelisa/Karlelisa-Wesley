@@ -1,0 +1,134 @@
+/* https://www.sitepoint.com/building-3d-rotating-carousel-css-javascript/ */
+/* The 3D Carousel */
+/* body {
+  margin: 0;
+  font-family: 'Roboto';
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+} */
+
+.carousel {
+  padding: 40px;
+  /* height: 400px; */
+  -webkit-perspective: 900px;
+  perspective: 900px;
+  overflow: hidden;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+
+.carousel>* {
+  flex: 0 0 auto;
+}
+
+.carousel figure {
+  margin: 0;
+  width: 600px;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  -webkit-transform-origin: 50% 50% -482.8427124746px;
+  transform-origin: 50% 50% -482.8427124746px;
+}
+
+.carousel figure img {
+  width: 100%;
+  height: 400px;
+  box-sizing: border-box;
+  padding-left: 110px;
+  padding-right: 110px;
+  opacity: 0.9;
+  /* https://www.w3schools.com/howto/howto_css_zoom_hover.asp */
+  transition: transform .2s;
+}
+
+/* https://www.w3schools.com/howto/howto_css_zoom_hover.asp */
+.carousel figure img:hover {
+  transform: scale(1.25);
+  /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.carousel figure a:not(:first-of-type) {
+  position: absolute;
+  left: 0;
+  top: 0;
+  -webkit-transform-origin: 50% 50% -482.8427124746px;
+  transform-origin: 50% 50% -482.8427124746px;
+}
+
+.carousel figure a:nth-child(2) {
+  -webkit-transform: rotateY(0.7853981634rad);
+  transform: rotateY(0.7853981634rad);
+}
+
+.carousel figure a:nth-child(3) {
+  -webkit-transform: rotateY(1.5707963268rad);
+  transform: rotateY(1.5707963268rad);
+}
+
+.carousel figure a:nth-child(4) {
+  -webkit-transform: rotateY(2.3561944902rad);
+  transform: rotateY(2.3561944902rad);
+}
+
+.carousel figure a:nth-child(5) {
+  -webkit-transform: rotateY(3.1415926536rad);
+  transform: rotateY(3.1415926536rad);
+}
+
+.carousel figure a:nth-child(6) {
+  -webkit-transform: rotateY(3.926990817rad);
+  transform: rotateY(3.926990817rad);
+}
+
+.carousel figure a:nth-child(7) {
+  -webkit-transform: rotateY(4.7123889804rad);
+  transform: rotateY(4.7123889804rad);
+}
+
+.carousel figure a:nth-child(8) {
+  -webkit-transform: rotateY(5.4977871438rad);
+  transform: rotateY(5.4977871438rad);
+}
+
+.carousel nav {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0;
+}
+
+.carousel nav button {
+  flex: 0 0 auto;
+  margin: 0 5px;
+  cursor: pointer;
+  /* color: palevioletred; */
+  color: black;
+  font-weight: bold;
+  background: none;
+  /* background-color: palevioletred; */
+  border: 3px solid black;
+  border-radius: 15%;
+  letter-spacing: 1px;
+  padding: 5px 10px;
+  /* box-shadow: 0px 0px 5px 2px; */
+
+}
+
+.carousel nav button:hover {
+  color: #FF0077;
+  border: 3px solid #FF0077;
+  /* color: rgb(216, 83, 127);
+  border: 3px solid rgb(216, 83, 127); */
+  /* box-shadow: 0px 0px 10px 4px; */
+}
+
+.carousel nav button:focus {
+  outline: 0;
+}

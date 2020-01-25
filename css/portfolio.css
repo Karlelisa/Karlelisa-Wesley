@@ -17,7 +17,6 @@
   perspective: 900px;
   overflow: hidden;
   display: flex;
-
   flex-direction: column;
   align-items: center;
 }
@@ -96,6 +95,11 @@
 .carousel figure a:nth-child(8) {
   -webkit-transform: rotateY(5.4977871438rad);
   transform: rotateY(5.4977871438rad);
+}
+
+.carousel figure a:nth-child(9) {
+  -webkit-transform: rotateY(6.2831853072rad);
+  transform: rotateY(6.2831853072rad);
 }
 
 .carousel nav {

@@ -1,3 +1,6 @@
+// Cited: http://www.styleshout.com/
+
+
 /** 
  * ===================================================================
  * main js
@@ -125,7 +128,7 @@
 	/*----------------------------------------------------*/
 	/*	Modal Popup
 	------------------------------------------------------*/
-	$('.item-wrap a').magnificPopup({
+	$('.carousel a').magnificPopup({
 
 		type: 'inline',
 		fixedContentPos: false,

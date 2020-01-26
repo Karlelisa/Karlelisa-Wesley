@@ -28,4 +28,10 @@ $(document).ready(() => {
         figure.style.transform = `rotateY(${currImage * -theta}rad)`;
     }
 
+
+
+    // 2nd carousel
+
+
+
 });

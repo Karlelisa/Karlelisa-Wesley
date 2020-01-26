@@ -132,6 +132,11 @@
  *
  * ------------------------------------------------------------------- 
  */
+
+ .header-one-animate {
+ 	display: none;
+ }
+
  h1,
  h2,
  h3,
@@ -1408,7 +1413,6 @@
  	/* color: transparent; */
  	width: 92px;
  	height: 15px;
- 	/* background: url("../images/logo.png") no-repeat center; */
  	background-size: 92px 15px;
  }
 
@@ -1522,7 +1526,7 @@
  	font-size: 1.5rem;
  	position: absolute;
  	top: 100%;
- 	left: 0;
+ 	/* left: 0; */
  }
 
  /* dropdown nav */

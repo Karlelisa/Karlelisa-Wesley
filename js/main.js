@@ -1,13 +1,5 @@
 // Cited: http://www.styleshout.com/
 
-
-/** 
- * ===================================================================
- * main js
- *
- * ------------------------------------------------------------------- 
- */
-
 (function ($) {
 
 	"use strict";
@@ -73,7 +65,7 @@
 	/*----------------------------------------------------- */
 	/* Stat Counter
   	------------------------------------------------------- */
-	var statSection = $("#stats"),
+	let statSection = $("#stats"),
 		stats = $(".stat-count");
 
 	statSection.waypoint({
@@ -83,7 +75,7 @@
 			if (direction === "down") {
 
 				stats.each(function () {
-					var $this = $(this);
+					let $this = $(this);
 
 					$({
 						Counter: 0
@@ -113,7 +105,7 @@
 	/*---------------------------------------------------- */
 	/*	Masonry
 	------------------------------------------------------ */
-	var containerProjects = $('#folio-wrapper');
+	let containerProjects = $('#folio-wrapper');
 
 	containerProjects.imagesLoaded(function () {
 
@@ -147,7 +139,7 @@
 	/*-----------------------------------------------------*/
 	/* Navigation Menu
    ------------------------------------------------------ */
-	var toggleButton = $('.menu-toggle'),
+	let toggleButton = $('.menu-toggle'),
 		nav = $('.main-navigation');
 
 	// toggle button
@@ -173,20 +165,20 @@
 	/*---------------------------------------------------- */
 	/* Highlight the current section in the navigation bar
 	------------------------------------------------------ */
-	var sections = $("section"),
+	let sections = $("section"),
 		navigation_links = $("#main-nav-wrap li a");
 
 	sections.waypoint({
 
 		handler: function (direction) {
 
-			var active_section;
+			let active_section;
 
 			active_section = $('section#' + this.element.id);
 
 			if (direction === "up") active_section = active_section.prev();
 
-			var active_link = $('#main-nav-wrap a[href="#' + active_section.attr("id") + '"]');
+			let active_link = $('#main-nav-wrap a[href="#' + active_section.attr("id") + '"]');
 
 			navigation_links.parent().removeClass("current");
 			active_link.parent().addClass("current");
@@ -204,7 +196,7 @@
 
 		e.preventDefault();
 
-		var target = this.hash,
+		let target = this.hash,
 			$target = $(target);
 
 		$('html, body').stop().animate({
@@ -232,7 +224,7 @@
 		/* submit via ajax */
 		submitHandler: function (form) {
 
-			var sLoader = $('#submit-loader');
+			let sLoader = $('#submit-loader');
 
 			$.ajax({
 
@@ -278,10 +270,10 @@
 	/*----------------------------------------------------- */
 	/* Back to top
    ------------------------------------------------------- */
-	var pxShow = 300; // height on which the button will show
-	var fadeInTime = 400; // how slow/fast you want the button to show
-	var fadeOutTime = 400; // how slow/fast you want the button to hide
-	var scrollSpeed = 300; // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
+	let pxShow = 300; // height on which the button will show
+	let fadeInTime = 400; // how slow/fast you want the button to show
+	let fadeOutTime = 400; // how slow/fast you want the button to hide
+	let scrollSpeed = 300; // how slow/fast you want the button to scroll to top. can be a value, 'slow', 'normal' or 'fast'
 
 	// Show or hide the sticky footer button
 	jQuery(window).scroll(function () {
@@ -301,52 +293,89 @@
 })(jQuery);
 
 
-// words rotate
-(function ($) {
-	$.fn.extend({
-		rotaterator: function (options) {
-
-			var defaults = {
-				fadeSpeed: 500,
-				pauseSpeed: 100,
-				child: null
-			};
-
-			var options = $.extend(defaults, options);
-
-			return this.each(function () {
-				var o = options;
-				var obj = $(this);
-				var items = $(obj.children(), obj);
-				items.each(function () {
-					$(this).hide();
-				})
-				if (!o.child) {
-					var next = $(obj).children(':first');
-				} else {
-					var next = o.child;
-				}
-				$(next).fadeIn(o.fadeSpeed, function () {
-					$(next).delay(o.pauseSpeed).fadeOut(o.fadeSpeed, function () {
-						var next = $(this).next();
-						if (next.length == 0) {
-							next = $(obj).children(':first');
-						}
-						$(obj).rotaterator({
-							child: next,
-							fadeSpeed: o.fadeSpeed,
-							pauseSpeed: o.pauseSpeed
-						});
-					})
-				});
-			});
-		}
-	});
-})(jQuery);
+// Typing word animimation
 
 $(document).ready(function () {
-	$('#rotate').rotaterator({
-		fadeSpeed: 500,
-		pauseSpeed: 100
-	});
+	function typeEffect(element, speed) {
+		let text = element.innerHTML;
+		element.innerHTML = "";
+
+		let i = 0;
+		let timer = setInterval(function () {
+			if (i < text.length) {
+				element.append(text.charAt(i));
+				i++;
+			} else {
+				clearInterval(timer);
+			}
+		}, speed);
+	}
+
+
+	// application
+	let speed = 75;
+	let h1 = document.querySelector('.header-one-animate');
+	let p = document.querySelector('p');
+	let delay = h1.innerHTML.length * speed + speed;
+
+	// type affect to header
+	// typeEffect(h1, speed);
+
+	// type affect to body
+	setTimeout(function () {
+		h1.style.display = "inline-block";
+		typeEffect(h1, speed);
+	}, delay);
+
+
 });
+
+// words rotate
+// (function ($) {
+// 	$.fn.extend({
+// 		rotaterator: function (options) {
+
+// 			let defaults = {
+// 				fadeSpeed: 500,
+// 				pauseSpeed: 100,
+// 				child: null
+// 			};
+
+// 			let options = $.extend(defaults, options);
+
+// 			return this.each(function () {
+// 				let o = options;
+// 				let obj = $(this);
+// 				let items = $(obj.children(), obj);
+// 				items.each(function () {
+// 					$(this).hide();
+// 				})
+// 				if (!o.child) {
+// 					let next = $(obj).children(':first');
+// 				} else {
+// 					let next = o.child;
+// 				}
+// 				$(next).fadeIn(o.fadeSpeed, function () {
+// 					$(next).delay(o.pauseSpeed).fadeOut(o.fadeSpeed, function () {
+// 						let next = $(this).next();
+// 						if (next.length == 0) {
+// 							next = $(obj).children(':first');
+// 						}
+// 						$(obj).rotaterator({
+// 							child: next,
+// 							fadeSpeed: o.fadeSpeed,
+// 							pauseSpeed: o.pauseSpeed
+// 						});
+// 					})
+// 				});
+// 			});
+// 		}
+// 	});
+// })(jQuery);
+
+// $(document).ready(function () {
+// 	$('#rotate').rotaterator({
+// 		fadeSpeed: 500,
+// 		pauseSpeed: 100
+// 	});
+// });

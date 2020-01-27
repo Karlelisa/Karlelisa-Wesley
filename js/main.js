@@ -294,6 +294,7 @@
 
 
 // Typing word animimation
+// Cited for my name animation: https://codepen.io/worksbyvan/pen/dRBGKK
 
 $(document).ready(function () {
 	function typeEffect(element, speed) {

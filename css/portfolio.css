@@ -97,10 +97,6 @@
   transform: rotateY(5.4977871438rad);
 }
 
-.carousel figure a:nth-child(9) {
-  -webkit-transform: rotateY(6.2831853072rad);
-  transform: rotateY(6.2831853072rad);
-}
 
 .carousel nav {
   display: flex;
@@ -126,7 +122,6 @@
 .carousel nav button:hover {
   color: #FF0077;
   border: 3px solid #FF0077;
-  /* delete below three */
   /* color: rgb(216, 83, 127);
   border: 3px solid rgb(216, 83, 127); */
   /* box-shadow: 0px 0px 10px 4px; */
@@ -135,6 +130,3 @@
 .carousel nav button:focus {
   outline: 0;
 }
-
-
-/* 2nd .carousel */

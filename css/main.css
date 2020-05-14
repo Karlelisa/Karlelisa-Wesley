@@ -3143,6 +3143,7 @@ footer .copyright span:last-child::after {
 }
 
 .card:hover {
+  /* https://www.w3schools.com/howto/howto_css_zoom_hover.asp */
   transform: scale(1.05);
 }
 
@@ -3153,22 +3154,16 @@ footer .copyright span:last-child::after {
 .card a {
   background: #cc005f;
   color: #fff;
-  /* font-weight: 700; */
   font-size: 1.4rem;
   text-transform: uppercase;
-  /* font-size: 0.6em; */
   border: none;
   padding: 1em 1.5em;
   cursor: pointer;
   position: absolute;
-  /* right: 0;
-	bottom: 0; */
-  /* margin: 2.5em 1.7em; */
   outline: none;
   text-align: center;
   border-radius: 25px;
   margin-left: 120px;
-  /* margin-right: 60px; */
 }
 
 .card a:hover {

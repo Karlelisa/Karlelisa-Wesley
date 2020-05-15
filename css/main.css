@@ -3130,14 +3130,16 @@ footer .copyright span:last-child::after {
   width: 30em;
   height: 20em;
   position: relative;
-  /* text-align: center; */
   align-content: center;
   box-shadow: 10px 10px 20px #bec3ce;
   padding-top: 20px;
   padding-left: 20px;
   padding-right: 20px;
+  margin-bottom: 30px;
   left: 20%;
   right: 20%;
+  flex-flow: row wrap;
+  flex-direction: column;
   /* https://www.w3schools.com/howto/howto_css_zoom_hover.asp */
   transition: transform 0.2s;
 }

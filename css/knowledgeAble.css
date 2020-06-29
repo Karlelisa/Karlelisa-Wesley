@@ -28,34 +28,6 @@ html {
   box-shadow: 0px 35px 77px -17px rgba(0, 0, 0, 0.44);
 }
 
-/* Cited for my name animation: https://www.designyourway.net/blog/web-and-mobile-design/yes-you-can-actually-make-these-text-effects-in-css/ */
-/* .header-one-animate { */
-
-/* font: "Oswald", sans-serif;
-	letter-spacing: 0;
-	padding: .25em 0 .325em;
-	display: block;
-	margin: 0 auto; */
-/* text-shadow: 0 0 80px rgba(255, 255, 255, .5); */
-
-/* Clip Background Image */
-
-/* background: url(http://f.cl.ly/items/010q3E1u3p2Q0j1L1S1o/animated_text_fill.png) repeat-y;
-	-webkit-background-clip: text;
-	background-clip: text; */
-
-/* Animate Background Image */
-
-/* -webkit-text-fill-color: transparent;
-	-webkit-animation: aitf 80s linear infinite; */
-
-/* Activate hardware acceleration for smoother animations */
-
-/* -webkit-transform: translate3d(0, 0, 0);
-	-webkit-backface-visibility: hidden; */
-
-/* } */
-
 /* Animate Background Image */
 
 @-webkit-keyframes aitf {
@@ -899,7 +871,9 @@ button.large,
 }
 
 button.stroke,
-.button.stroke {
+.button.stroke,
+button.strokes,
+.button.strokes {
   background: transparent !important;
   /* border: 3px solid #313131; */
   /* background-color: #000000; */
@@ -917,18 +891,40 @@ a #hire-me-btn {
   line-height: 4.8rem;
 }
 
+#browesaloud-btn1,
+#browesaloud-btn2 {
+  background-color: #ff0077;
+  border: 3px solid #ff0077;
+  color: #000000;
+  font-weight: bold;
+  line-height: 4.8rem;
+  width: 40%;
+}
+
+#browesaloud-btn1:hover,
+#browesaloud-btn2:hover {
+  background-color: #cc005f;
+  border: 3px solid #cc005f;
+}
+
 button.stroke.medium,
-.button.stroke.medium {
+.button.stroke.medium,
+button.strokes.medium,
+.button.strokes.medium {
   line-height: 5.1rem !important;
 }
 
 button.stroke.large,
-.button.stroke.large {
+.button.stroke.large,
+button.strokes.large,
+.button.strokes.large {
   line-height: 5.4rem !important;
 }
 
 button.stroke:hover,
-.button.stroke:hover {
+.button.stroke:hover,
+button.strokes:hover,
+.button.strokes:hover {
   border: 3px solid #ff0077;
   color: #ff0077;
   /* background: black;
@@ -1304,11 +1300,13 @@ input::-moz-focus-inner {
  * ------------------------------------------------------------------- 
  */
 .grey-section {
-  background: #ebebeb;
+  /* background: #ebebeb; */
+  background: #f5f4f4;
 }
 
 .grey-section p.lead {
-  color: #7d7d7d;
+  /* color: #7d7d7d; */
+  color: #4d4c4c;
 }
 
 .section-intro {
@@ -1335,6 +1333,37 @@ input::-moz-focus-inner {
 }
 
 .section-intro h5 {
+  color: #ff0077;
+  font-size: 1.6rem;
+  line-height: 1.875;
+  margin-bottom: 0.3rem;
+  letter-spacing: 0.4rem;
+}
+
+.section-intro-design {
+  /* max-width: 700px; */
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 3.6rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 2.5em;
+      margin-left: 5em;
+      height: 100vh; */
+}
+
+.section-intro-design h1 {
+  font-family: "poppins-semibold", serif;
+  font-size: 3.6rem;
+  color: #313131;
+  line-height: 1.25;
+  margin-bottom: 1.2rem;
+}
+
+.section-intro-design h5 {
   color: #ff0077;
   font-size: 1.6rem;
   line-height: 1.875;
@@ -1423,6 +1452,13 @@ header .logo a {
   width: 92px;
   height: 15px;
   background-size: 92px 15px;
+}
+
+header .logo p {
+  font-weight: bold;
+  text-shadow: none;
+  color: #ff0077;
+  float: right;
 }
 
 /**
@@ -1858,12 +1894,20 @@ header .logo a {
   margin-left: -30px;
 }
 
-.intro-info img {
-  height: 9rem;
-  width: 9rem;
-  border-radius: 50%;
-  margin: 0.9rem 0 0 0;
+.intro-intro img {
+  height: 35rem;
+  width: 55rem;
+  /* border-radius: 50%; */
+  /* margin: 0.9rem 0 0 0; */
+  margin: 0.5rem 0 0 0;
   float: left;
+  /* https://www.w3schools.com/howto/howto_css_zoom_hover.asp */
+  transition: transform 0.2s;
+}
+
+.intro-intro img {
+  /* https://www.w3schools.com/howto/howto_css_zoom_hover.asp */
+  transform: scale(1.09);
 }
 
 .intro-info .lead {
@@ -1928,6 +1972,10 @@ header .logo a {
   margin-right: 4rem;
 }
 
+.fa-arrow-right {
+  color: #ff0077;
+}
+
 /**
  * responsive:
  * about
@@ -1976,8 +2024,8 @@ header .logo a {
   }
 
   .intro-info img {
-    height: 6.6rem;
-    width: 6.6rem;
+    height: 12rem;
+    width: 12rem;
     float: none;
     display: inline-block;
   }
@@ -1996,7 +2044,18 @@ header .logo a {
  */
 #resume {
   padding-top: 12rem;
-  padding-bottom: 12rem;
+  padding-bottom: 20rem;
+}
+
+#resume img {
+  box-shadow: 10px 10px 20px #bec3ce;
+  /* https://www.w3schools.com/howto/howto_css_zoom_hover.asp */
+  transition: transform 0.2s;
+}
+
+#resume img:hover {
+  /* https://www.w3schools.com/howto/howto_css_zoom_hover.asp */
+  transform: scale(1.09);
 }
 
 #resume .resume-header {
@@ -2607,6 +2666,16 @@ header .logo a {
   color: #ff0077;
 }
 
+.service .icon {
+  display: inline-block;
+  margin-bottom: 2.1rem;
+}
+
+.service .icon {
+  font-size: 5.4rem;
+  color: #ff0077;
+}
+
 .services-list h3 {
   color: #ffffff;
 }
@@ -2848,7 +2917,8 @@ header .logo a {
   color: #ffffff;
 }
 
-#contact button.submitform {
+#contact button.submitform,
+.browesaloud-btn {
   font-size: 1.5rem;
   display: block;
   letter-spacing: 0.2rem;
@@ -3192,3 +3262,28 @@ footer .copyright span:last-child::after {
 .card a:hover {
   background: #a1044d;
 }
+
+/* Knowledge-ABLE YouTube Review Video*/
+iframe {
+  /* border: 10px solid black; */
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  /* https://www.w3schools.com/howto/howto_css_zoom_hover.asp */
+  transition: transform 0.2s;
+}
+
+iframe:hover {
+  transform: scale(1.05);
+}
+
+/* Knowledge-Able Icon */
+.section-intro img {
+  border: 10px solid #cc005f;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+/* BrowseAloud */
+#browsealoud span {
+  color: #ff0077;
+}
+
+/* knowledge-Able Carousel Design */

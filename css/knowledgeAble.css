@@ -1371,6 +1371,17 @@ input::-moz-focus-inner {
   letter-spacing: 0.4rem;
 }
 
+.section-intro-design img {
+  box-shadow: 10px 10px 20px #bec3ce;
+  /* box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); */
+  /* https://www.w3schools.com/howto/howto_css_zoom_hover.asp */
+  transition: transform 0.2s;
+}
+
+.section-intro-design img:hover {
+  transform: scale(1.05);
+}
+
 /**
  * responsive:
  * common styles
@@ -3284,6 +3295,6 @@ iframe:hover {
 /* BrowseAloud */
 #browsealoud span {
   color: #ff0077;
+  height: 25%;
+  width: auto;
 }
-
-/* knowledge-Able Carousel Design */
